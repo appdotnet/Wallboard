@@ -12,7 +12,6 @@
 @interface BrowserWindowController : NSWindowController<NSWindowDelegate>
 
 @property (nonatomic, assign) NSUInteger screenIndex;
-@property (nonatomic, weak) NSScreen *screen;
 @property (nonatomic, weak) IBOutlet WebView *webView;
 
 - (id)initWithScreenIndex:(NSUInteger)screenIndex;

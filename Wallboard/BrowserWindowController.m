@@ -18,7 +18,10 @@
     self = [super initWithWindowNibName:@"BrowserWindowController"];
     if (self) {
         self.screenIndex = screenIndex;
-        self.screen = [[NSScreen screens] objectAtIndex:screenIndex];
+        NSScreen *screen = [[NSScreen screens] objectAtIndex:screenIndex];
+        [self.window setLevel:CGShieldingWindowLevel()];
+        [self.window setFrame:[screen frame] display:YES];
+        [self.window orderWindow:NSWindowAbove relativeTo:[self.window.parentWindow windowNumber]];
     }
 
     return self;
@@ -29,13 +32,6 @@
 
     NSString *urlKey = [NSString stringWithFormat:@"url.%lu", self.screenIndex];
     self.webView.mainFrameURL = [[NSUserDefaults standardUserDefaults] objectForKey:urlKey];
-}
-
-- (void)setScreen:(NSScreen *)screen {
-    _screen = screen;
-    [self.window setLevel:CGShieldingWindowLevel()];
-    [self.window setFrame:[screen frame] display:YES];
-    [self.window orderWindow:NSWindowAbove relativeTo:[self.window.parentWindow windowNumber]];
 }
 
 @end
