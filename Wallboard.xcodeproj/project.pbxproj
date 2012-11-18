@@ -17,6 +17,10 @@
 		656509DF165766D4001D9C81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656509BF165766D4001D9C81 /* Cocoa.framework */; };
 		656509E7165766D4001D9C81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 656509E5165766D4001D9C81 /* InfoPlist.strings */; };
 		656509EA165766D4001D9C81 /* WallboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 656509E9165766D4001D9C81 /* WallboardTests.m */; };
+		656509F416576C93001D9C81 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656509F316576C93001D9C81 /* WebKit.framework */; };
+		656509FC16587D05001D9C81 /* BrowserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 656509FA16587D05001D9C81 /* BrowserWindowController.m */; };
+		656509FD16587D05001D9C81 /* BrowserWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656509FB16587D05001D9C81 /* BrowserWindowController.xib */; };
+		65650A0116595112001D9C81 /* BorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A0016595112001D9C81 /* BorderlessWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,12 @@
 		656509E6165766D4001D9C81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		656509E8165766D4001D9C81 /* WallboardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallboardTests.h; sourceTree = "<group>"; };
 		656509E9165766D4001D9C81 /* WallboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallboardTests.m; sourceTree = "<group>"; };
+		656509F316576C93001D9C81 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		656509F916587D05001D9C81 /* BrowserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserWindowController.h; sourceTree = "<group>"; };
+		656509FA16587D05001D9C81 /* BrowserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserWindowController.m; sourceTree = "<group>"; };
+		656509FB16587D05001D9C81 /* BrowserWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowserWindowController.xib; sourceTree = "<group>"; };
+		656509FF16595112001D9C81 /* BorderlessWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderlessWindow.h; sourceTree = "<group>"; };
+		65650A0016595112001D9C81 /* BorderlessWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderlessWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656509F416576C93001D9C81 /* WebKit.framework in Frameworks */,
 				656509C0165766D4001D9C81 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +86,7 @@
 		656509B0165766D4001D9C81 = {
 			isa = PBXGroup;
 			children = (
+				656509F316576C93001D9C81 /* WebKit.framework */,
 				656509C5165766D4001D9C81 /* Wallboard */,
 				656509E2165766D4001D9C81 /* WallboardTests */,
 				656509BE165766D4001D9C81 /* Frameworks */,
@@ -116,6 +128,11 @@
 			children = (
 				656509D1165766D4001D9C81 /* AppDelegate.h */,
 				656509D2165766D4001D9C81 /* AppDelegate.m */,
+				656509FF16595112001D9C81 /* BorderlessWindow.h */,
+				65650A0016595112001D9C81 /* BorderlessWindow.m */,
+				656509F916587D05001D9C81 /* BrowserWindowController.h */,
+				656509FA16587D05001D9C81 /* BrowserWindowController.m */,
+				656509FB16587D05001D9C81 /* BrowserWindowController.xib */,
 				656509D4165766D4001D9C81 /* MainMenu.xib */,
 				656509C6165766D4001D9C81 /* Supporting Files */,
 			);
@@ -227,6 +244,7 @@
 				656509CA165766D4001D9C81 /* InfoPlist.strings in Resources */,
 				656509D0165766D4001D9C81 /* Credits.rtf in Resources */,
 				656509D6165766D4001D9C81 /* MainMenu.xib in Resources */,
+				656509FD16587D05001D9C81 /* BrowserWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +281,8 @@
 			files = (
 				656509CC165766D4001D9C81 /* main.m in Sources */,
 				656509D3165766D4001D9C81 /* AppDelegate.m in Sources */,
+				656509FC16587D05001D9C81 /* BrowserWindowController.m in Sources */,
+				65650A0116595112001D9C81 /* BorderlessWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +466,7 @@
 				656509EF165766D4001D9C81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		656509F0165766D4001D9C81 /* Build configuration list for PBXNativeTarget "WallboardTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +475,7 @@
 				656509F2165766D4001D9C81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,12 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import "BrowserWindowController.h"
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [self createBrowserWindows];
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSApplicationDidChangeScreenParametersNotification
+                                                      object:NSApp queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      [self createBrowserWindows];
+    }];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    [self destroyBrowserWindows];
+}
+
+- (void)createBrowserWindows {
+    if (self.browserWindowControllers != nil) {
+        [self destroyBrowserWindows];
+    }
+    
+    NSUInteger screenCount = [[NSScreen screens] count];
+    NSMutableArray *windowControllers = [NSMutableArray arrayWithCapacity:screenCount];
+
+    for (NSUInteger i = 0; i < screenCount; i++) {
+        [windowControllers addObject:[[BrowserWindowController alloc] initWithScreenIndex:i]];
+    }
+
+    // freeze to immutable array
+    self.browserWindowControllers = [windowControllers copy];
+}
+
+- (void)destroyBrowserWindows {
+    NSArray *windowControllers = self.browserWindowControllers;
+    self.browserWindowControllers = nil;
+
+    for (BrowserWindowController *browser in windowControllers) {
+        [browser close];
+    }
 }
 
 @end
