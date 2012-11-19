@@ -27,11 +27,24 @@
     return self;
 }
 
+- (NSString *)preferenceKey {
+    return [NSString stringWithFormat:@"url.%lu", self.screenIndex];
+}
+
+- (void)setURL:(NSURL *)url save:(BOOL)save {
+    _url = url;
+
+    if (save) {
+        [[NSUserDefaults standardUserDefaults] setObject:[url absoluteString] forKey:self.preferenceKey];
+    }
+
+    [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
 - (void)windowDidLoad {
     [super windowDidLoad];
 
-    NSString *urlKey = [NSString stringWithFormat:@"url.%lu", self.screenIndex];
-    self.webView.mainFrameURL = [[NSUserDefaults standardUserDefaults] objectForKey:urlKey];
+    self.webView.mainFrameURL = [[NSUserDefaults standardUserDefaults] objectForKey:self.preferenceKey];
 }
 
 @end

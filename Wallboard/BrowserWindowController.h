@@ -13,6 +13,8 @@
 
 @property (nonatomic, assign) NSUInteger screenIndex;
 @property (nonatomic, weak) IBOutlet WebView *webView;
+@property (nonatomic, weak, readonly) NSString *preferenceKey;
+@property (nonatomic, strong) NSURL *url;
 
 - (id)initWithScreenIndex:(NSUInteger)screenIndex;
 
