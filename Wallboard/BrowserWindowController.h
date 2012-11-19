@@ -9,13 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
-@interface BrowserWindowController : NSWindowController<NSWindowDelegate>
+@interface BrowserWindowController : NSWindowController<NSWindowDelegate> {
+    NSURL *_url;
+}
 
 @property (nonatomic, assign) NSUInteger screenIndex;
 @property (nonatomic, weak) IBOutlet WebView *webView;
-@property (nonatomic, weak, readonly) NSString *preferenceKey;
-@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, readonly) NSURL *savedURL;
+@property (nonatomic, readonly) NSURL *currentURL;
 
 - (id)initWithScreenIndex:(NSUInteger)screenIndex;
+- (void)setURL:(NSURL *)url save:(BOOL)save;
 
 @end

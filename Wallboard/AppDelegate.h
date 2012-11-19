@@ -9,12 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class BrowserWindowController;
-@class HTTPServer;
+@class RoutingHTTPServer;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, strong) NSArray *browserWindowControllers;
-@property (nonatomic, strong) HTTPServer *httpServer;
+@property (nonatomic, strong) RoutingHTTPServer *httpServer;
 
 + (AppDelegate *)sharedDelegate;
 

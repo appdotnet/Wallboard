@@ -46,7 +46,12 @@
 		65650A651659DD67001D9C81 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A451659DD67001D9C81 /* ContextFilterLogFormatter.m */; };
 		65650A661659DD67001D9C81 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A471659DD67001D9C81 /* DispatchQueueLogFormatter.m */; };
 		65650A6C1659DDAA001D9C81 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65650A6B1659DDAA001D9C81 /* Security.framework */; };
-		65650A6F1659E4EC001D9C81 /* WallboardHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A6E1659E4EC001D9C81 /* WallboardHTTPConnection.m */; };
+		65650A861659E7E0001D9C81 /* HTTPResponseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A771659E7E0001D9C81 /* HTTPResponseProxy.m */; };
+		65650A871659E7E0001D9C81 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A791659E7E0001D9C81 /* Route.m */; };
+		65650A881659E7E0001D9C81 /* RouteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A7B1659E7E0001D9C81 /* RouteRequest.m */; };
+		65650A891659E7E0001D9C81 /* RouteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A7D1659E7E0001D9C81 /* RouteResponse.m */; };
+		65650A8A1659E7E0001D9C81 /* RoutingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A7F1659E7E0001D9C81 /* RoutingConnection.m */; };
+		65650A8B1659E7E0001D9C81 /* RoutingHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65650A811659E7E0001D9C81 /* RoutingHTTPServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,8 +142,18 @@
 		65650A471659DD67001D9C81 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		65650A691659DD90001D9C81 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		65650A6B1659DDAA001D9C81 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		65650A6D1659E4EC001D9C81 /* WallboardHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallboardHTTPConnection.h; sourceTree = "<group>"; };
-		65650A6E1659E4EC001D9C81 /* WallboardHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallboardHTTPConnection.m; sourceTree = "<group>"; };
+		65650A761659E7E0001D9C81 /* HTTPResponseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponseProxy.h; sourceTree = "<group>"; };
+		65650A771659E7E0001D9C81 /* HTTPResponseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPResponseProxy.m; sourceTree = "<group>"; };
+		65650A781659E7E0001D9C81 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		65650A791659E7E0001D9C81 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		65650A7A1659E7E0001D9C81 /* RouteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteRequest.h; sourceTree = "<group>"; };
+		65650A7B1659E7E0001D9C81 /* RouteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteRequest.m; sourceTree = "<group>"; };
+		65650A7C1659E7E0001D9C81 /* RouteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteResponse.h; sourceTree = "<group>"; };
+		65650A7D1659E7E0001D9C81 /* RouteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteResponse.m; sourceTree = "<group>"; };
+		65650A7E1659E7E0001D9C81 /* RoutingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingConnection.h; sourceTree = "<group>"; };
+		65650A7F1659E7E0001D9C81 /* RoutingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingConnection.m; sourceTree = "<group>"; };
+		65650A801659E7E0001D9C81 /* RoutingHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingHTTPServer.h; sourceTree = "<group>"; };
+		65650A811659E7E0001D9C81 /* RoutingHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingHTTPServer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +231,6 @@
 				656509F916587D05001D9C81 /* BrowserWindowController.h */,
 				656509FA16587D05001D9C81 /* BrowserWindowController.m */,
 				656509FB16587D05001D9C81 /* BrowserWindowController.xib */,
-				65650A6D1659E4EC001D9C81 /* WallboardHTTPConnection.h */,
-				65650A6E1659E4EC001D9C81 /* WallboardHTTPConnection.m */,
 				65650A061659DD67001D9C81 /* Libraries */,
 				656509D4165766D4001D9C81 /* MainMenu.xib */,
 				656509C6165766D4001D9C81 /* Supporting Files */,
@@ -259,6 +272,7 @@
 		65650A061659DD67001D9C81 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				65650A701659E7DF001D9C81 /* RoutingHTTPServer */,
 				65650A071659DD67001D9C81 /* CocoaHTTPServer */,
 			);
 			path = Libraries;
@@ -383,6 +397,33 @@
 				65650A471659DD67001D9C81 /* DispatchQueueLogFormatter.m */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		65650A701659E7DF001D9C81 /* RoutingHTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				65650A751659E7E0001D9C81 /* Source */,
+			);
+			path = RoutingHTTPServer;
+			sourceTree = "<group>";
+		};
+		65650A751659E7E0001D9C81 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				65650A761659E7E0001D9C81 /* HTTPResponseProxy.h */,
+				65650A771659E7E0001D9C81 /* HTTPResponseProxy.m */,
+				65650A781659E7E0001D9C81 /* Route.h */,
+				65650A791659E7E0001D9C81 /* Route.m */,
+				65650A7A1659E7E0001D9C81 /* RouteRequest.h */,
+				65650A7B1659E7E0001D9C81 /* RouteRequest.m */,
+				65650A7C1659E7E0001D9C81 /* RouteResponse.h */,
+				65650A7D1659E7E0001D9C81 /* RouteResponse.m */,
+				65650A7E1659E7E0001D9C81 /* RoutingConnection.h */,
+				65650A7F1659E7E0001D9C81 /* RoutingConnection.m */,
+				65650A801659E7E0001D9C81 /* RoutingHTTPServer.h */,
+				65650A811659E7E0001D9C81 /* RoutingHTTPServer.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,7 +563,12 @@
 				65650A641659DD67001D9C81 /* DDTTYLogger.m in Sources */,
 				65650A651659DD67001D9C81 /* ContextFilterLogFormatter.m in Sources */,
 				65650A661659DD67001D9C81 /* DispatchQueueLogFormatter.m in Sources */,
-				65650A6F1659E4EC001D9C81 /* WallboardHTTPConnection.m in Sources */,
+				65650A861659E7E0001D9C81 /* HTTPResponseProxy.m in Sources */,
+				65650A871659E7E0001D9C81 /* Route.m in Sources */,
+				65650A881659E7E0001D9C81 /* RouteRequest.m in Sources */,
+				65650A891659E7E0001D9C81 /* RouteResponse.m in Sources */,
+				65650A8A1659E7E0001D9C81 /* RoutingConnection.m in Sources */,
+				65650A8B1659E7E0001D9C81 /* RoutingHTTPServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +690,7 @@
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -660,6 +707,7 @@
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

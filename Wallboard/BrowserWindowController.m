@@ -10,6 +10,8 @@
 
 @interface BrowserWindowController ()
 
+@property (nonatomic, weak, readonly) NSString *preferenceKey;
+
 @end
 
 @implementation BrowserWindowController
@@ -37,9 +39,15 @@
     return [NSString stringWithFormat:@"url.%lu", self.screenIndex];
 }
 
-- (void)setURL:(NSURL *)url save:(BOOL)save {
-    _url = url;
+- (NSURL *)savedURL {
+    return [NSURL URLWithString:[[NSUserDefaults standardUserDefaults] objectForKey:self.preferenceKey]];
+}
 
+- (NSURL *)currentURL {
+    return [[[self.webView.mainFrame provisionalDataSource] request] URL];
+}
+
+- (void)setURL:(NSURL *)url save:(BOOL)save {
     if (save) {
         [[NSUserDefaults standardUserDefaults] setObject:[url absoluteString] forKey:self.preferenceKey];
     }
@@ -50,7 +58,7 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 
-    self.webView.mainFrameURL = [[NSUserDefaults standardUserDefaults] objectForKey:self.preferenceKey];
+    [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:self.savedURL]];
 }
 
 @end
