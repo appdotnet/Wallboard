@@ -38,7 +38,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">3</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{0, 0}, {480, 270}}</string>
+				<string key="NSWindowRect">{{0, 0}, {690, 493}}</string>
 				<int key="NSWTFlags">539493376</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">BorderlessWindow</string>
@@ -68,7 +68,7 @@
 								<string>public.url</string>
 								<string>public.url-name</string>
 							</set>
-							<string key="NSFrameSize">{480, 270}</string>
+							<string key="NSFrameSize">{690, 493}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -87,7 +87,7 @@
 							<bool key="AllowsUndo">YES</bool>
 						</object>
 					</array>
-					<string key="NSFrameSize">{480, 270}</string>
+					<string key="NSFrameSize">{690, 493}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="586843766"/>

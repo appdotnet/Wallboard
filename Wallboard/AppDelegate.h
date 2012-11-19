@@ -7,12 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <WebKit/WebKit.h>
 
 @class BrowserWindowController;
+@class HTTPServer;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, strong) NSArray *browserWindowControllers;
+@property (nonatomic, strong) HTTPServer *httpServer;
+
++ (AppDelegate *)sharedDelegate;
 
 @end

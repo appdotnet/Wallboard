@@ -3,7 +3,7 @@
 //  Wallboard
 //
 //  Created by Bryan Berg on 11/17/12.
-//  Copyright (c) 2012 Mixed Media Labs, Inc. All rights reserved.
+//  Copyright (c) 2012 Mixed Media Labs, Inc. All rights reserved.  
 //
 
 #import "BrowserWindowController.h"
@@ -18,9 +18,15 @@
     self = [super initWithWindowNibName:@"BrowserWindowController"];
     if (self) {
         self.screenIndex = screenIndex;
-        NSScreen *screen = [[NSScreen screens] objectAtIndex:screenIndex];
-        [self.window setLevel:CGShieldingWindowLevel()];
-        [self.window setFrame:[screen frame] display:YES];
+
+        BOOL debugMode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"devmode"] boolValue];
+
+        if (!debugMode) {
+            NSScreen *screen = [[NSScreen screens] objectAtIndex:screenIndex];
+            [self.window setLevel:CGShieldingWindowLevel()];
+            [self.window setFrame:[screen frame] display:YES];
+        }
+
         [self.window orderWindow:NSWindowAbove relativeTo:[self.window.parentWindow windowNumber]];
     }
 

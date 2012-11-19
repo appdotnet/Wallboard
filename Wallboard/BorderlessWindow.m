@@ -12,8 +12,15 @@
 
 - (id) initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)windowStyle
                    backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
-    return [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask
-                              backing:bufferingType defer:flag];
+    BOOL debugMode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"devmode"] boolValue];
+
+    if (!debugMode) {
+        return [super initWithContentRect:contentRect styleMask:NSBorderlessWindowMask
+                                  backing:bufferingType defer:flag];
+    } else {
+        return [super initWithContentRect:contentRect styleMask:windowStyle
+                                  backing:bufferingType defer:flag];
+    }
 }
 
 - (BOOL)canBecomeKeyWindow
