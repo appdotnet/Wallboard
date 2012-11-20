@@ -195,6 +195,14 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
             }
 
             NSURL *url = [NSURL URLWithString:[requestData objectForKey:@"url"]];
+
+            // whitelist URLs to http/https
+            if (!([url.scheme isEqualToString:@"http"] || [url.scheme isEqualToString:@"https"])) {
+                [response setStatusCode:400];
+                NSLog(@"Attempted to set URL with invalid scheme: %@", [url absoluteString]);
+                return nil;
+            }
+
             BOOL save = [[requestData objectForKey:@"save"] boolValue];
 
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -44,7 +44,12 @@
 }
 
 - (NSURL *)currentURL {
-    return [[[self.webView.mainFrame provisionalDataSource] request] URL];
+    WebDataSource *source = self.webView.mainFrame.provisionalDataSource;
+    if (!source) {
+        source = self.webView.mainFrame.dataSource;
+    }
+
+    return source.request.URL;
 }
 
 - (void)setURL:(NSURL *)url save:(BOOL)save {
