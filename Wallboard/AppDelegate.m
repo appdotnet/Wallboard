@@ -143,7 +143,7 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
 
 	self.httpServer.type = @"_wallboard._tcp.";
 
-    UInt16 port = [[[NSUserDefaults standardUserDefaults] objectForKey:@"httppport"] unsignedShortValue];
+    UInt16 port = [[[NSUserDefaults standardUserDefaults] objectForKey:@"httpport"] unsignedShortValue];
     if (port == 0) {
         port = 9244; // WALL
     }
