@@ -20,5 +20,6 @@
 
 - (id)initWithScreenIndex:(NSUInteger)screenIndex;
 - (void)setURL:(NSURL *)url save:(BOOL)save;
+- (void)refreshPosition;
 
 @end

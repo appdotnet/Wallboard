@@ -20,16 +20,7 @@
     self = [super initWithWindowNibName:@"BrowserWindowController"];
     if (self) {
         self.screenIndex = screenIndex;
-
-        BOOL debugMode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"devmode"] boolValue];
-
-        if (!debugMode) {
-            NSScreen *screen = [[NSScreen screens] objectAtIndex:screenIndex];
-            [self.window setLevel:CGShieldingWindowLevel()];
-            [self.window setFrame:[screen frame] display:YES];
-        }
-
-        [self.window orderWindow:NSWindowAbove relativeTo:[self.window.parentWindow windowNumber]];
+        [self refreshPosition];
     }
 
     return self;
@@ -64,6 +55,18 @@
     [super windowDidLoad];
 
     [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:self.savedURL]];
+}
+
+- (void)refreshPosition {
+    BOOL debugMode = [[[NSUserDefaults standardUserDefaults] objectForKey:@"devmode"] boolValue];
+
+    if (!debugMode) {
+        NSScreen *screen = [[NSScreen screens] objectAtIndex:self.screenIndex];
+        [self.window setLevel:CGShieldingWindowLevel()];
+        [self.window setFrame:[screen frame] display:YES];
+    }
+
+    [self.window orderWindow:NSWindowAbove relativeTo:[self.window.parentWindow windowNumber]];
 }
 
 @end

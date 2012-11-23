@@ -32,10 +32,20 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
     [[NSNotificationCenter defaultCenter] addObserverForName:NSApplicationDidChangeScreenParametersNotification
                                                       object:NSApp queue:[NSOperationQueue mainQueue]
                                                   usingBlock:^(NSNotification *note) {
-                                                      [self createBrowserWindows];
+                                                      [self refreshBrowserWindows];
     }];
 
     NSLog(@"Main thread");
+}
+
+- (void)refreshBrowserWindows {
+    if ([self.browserWindowControllers count] != [[NSScreen screens] count]) {
+        [self createBrowserWindows];
+    } else {
+        for (BrowserWindowController *controller in self.browserWindowControllers) {
+            [controller refreshPosition];
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
