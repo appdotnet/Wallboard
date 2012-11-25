@@ -25,7 +25,7 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [self startHTTPServer];
 
     [self createBrowserWindows];
@@ -34,8 +34,6 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
                                                   usingBlock:^(NSNotification *note) {
                                                       [self refreshBrowserWindows];
     }];
-
-    NSLog(@"Main thread");
 }
 
 - (void)refreshBrowserWindows {
@@ -149,9 +147,9 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"disablehttp"] boolValue])
         return;
 
-	self.httpServer = [[RoutingHTTPServer alloc] init];
+    self.httpServer = [[RoutingHTTPServer alloc] init];
 
-	self.httpServer.type = @"_wallboard._tcp.";
+    self.httpServer.type = @"_wallboard._tcp.";
 
     UInt16 port = [[[NSUserDefaults standardUserDefaults] objectForKey:@"httpport"] unsignedShortValue];
     if (port == 0) {
@@ -223,12 +221,12 @@ id nilify(id arg) { return arg ? arg : [NSNull null]; }
         }];
     }];
 
-	NSError *error;
-	BOOL success = [self.httpServer start:&error];
+    NSError *error;
+    BOOL success = [self.httpServer start:&error];
 
-	if (!success) {
-		DDLogError(@"Error starting HTTP Server: %@", error);
-	}
+    if (!success) {
+        DDLogError(@"Error starting HTTP Server: %@", error);
+    }
 }
 
 @end

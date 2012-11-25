@@ -45,7 +45,9 @@
 
 - (void)setURL:(NSURL *)url save:(BOOL)save {
     if (save) {
-        [[NSUserDefaults standardUserDefaults] setObject:[url absoluteString] forKey:self.preferenceKey];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[url absoluteString] forKey:self.preferenceKey];
+        [defaults synchronize];
     }
 
     [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:url]];
